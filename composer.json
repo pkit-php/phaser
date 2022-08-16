@@ -1,0 +1,28 @@
+{
+  "name": "pkit/phaser",
+  "type": "project",
+  "description": "Database manager",
+  "keywords": [
+    "framework",
+    "pkit",
+    "api-rest",
+    "jwt"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Kauan Augusto",
+      "email": "kauaug.mo@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "ext-pdo": "Necessário para a conexão do banco de dados",
+    "pkit/phutilities": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pkit\\": "src"
+    }
+  }
+}
