@@ -11,7 +11,7 @@ Classes de conexão e manipulaçao de Banco de Dados
   ```php
   <?php
 
-  require __DIR__ . '/pkit/load.php';
+  require __DIR__ . '/vendor/autoload.php';
 
   use Phaser\Database;
   /***/
