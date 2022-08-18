@@ -1,6 +1,6 @@
 # Database
 
-Classe de autenticação e criação de tokens genéricos
+Classes de conexão e manipulaçao de Banco de Dados
 
 ## Database
 
