@@ -1,6 +1,6 @@
 <?php
 
-namespace Phaser\Database;
+namespace Phaser;
 
 use Phaser\Abstracts\Connection;
 use Phutilities\Env;
@@ -23,8 +23,7 @@ class EnvConnection extends Connection
     private static function getAttribute(string $attribute): string
     {
         if (is_null(self::$config[$attribute])) {
-            self::${$attribute} = self::$config[$attribute]
-                ?? Env::getEnvOrValue("DB_" . strtoupper($attribute), "");
+            self::$config[$attribute] = Env::getEnvOrValue("DB_" . strtoupper($attribute), "");
         }
         return self::$config[$attribute];
     }
