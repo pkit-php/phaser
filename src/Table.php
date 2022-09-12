@@ -1,17 +1,18 @@
 <?php
 
-namespace Pkit\Database;
+namespace Phaser\Database;
 
 use Phutilities\Sanitize;
 use PDO;
+use Phaser\Abstracts\Connection;
 use ReflectionProperty as PrivateProperty;
 
 class Table
 {
   private string $_table = "";
-  private Connection $_connection;
+  private Database $_database;
 
-  public function __construct(array $properties = [])
+  public function __construct(array $properties = [], ?Connection $connection = null)
   {
     foreach ($properties as $key => $value) {
       $this->{$key} = $value;
@@ -22,7 +23,7 @@ class Table
     } catch (\Throwable $_) {
       $this->_table = Sanitize::class(get_class($this));
     }
-    $this->_connection = new Connection;
+    $this->_database = new Database($connection);
   }
 
   public function __set($prop, $value)
@@ -52,7 +53,7 @@ class Table
       $query->return($returns);
     }
 
-    $stmt = $this->_connection->execute($query, $query->getParams());
+    $stmt = $this->_database->execute($query, $query->getParams());
 
     return $stmt->fetch();
   }
@@ -65,7 +66,7 @@ class Table
       $query->where($where);
     }
 
-    $stmt = $this->_connection->execute($query, $query->getParams());
+    $stmt = $this->_database->execute($query, $query->getParams());
 
     return $stmt->fetch()[0];
   }
@@ -87,7 +88,7 @@ class Table
       $query->limit($limit);
     }
 
-    $stmt = $this->_connection->execute($query, $query->getParams());
+    $stmt = $this->_database->execute($query, $query->getParams());
 
     return $stmt->fetchAll(PDO::FETCH_CLASS, get_class($this));
   }
@@ -103,7 +104,7 @@ class Table
       $query->where($where);
     }
 
-    $this->_connection->execute($query, $query->getParams());
+    $this->_database->execute($query, $query->getParams());
   }
 
   public function delete(array $where = null)
@@ -114,6 +115,6 @@ class Table
       $query->where($where);
     }
 
-    $this->_connection->execute($query, $query->getParams());
+    $this->_database->execute($query, $query->getParams());
   }
 }

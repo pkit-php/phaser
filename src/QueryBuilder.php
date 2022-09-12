@@ -1,6 +1,6 @@
 <?php
 
-namespace Pkit\Database;
+namespace Phaser\Database;
 
 use Phutilities\Text;
 
