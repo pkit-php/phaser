@@ -1,6 +1,6 @@
 <?php
 
-namespace Phaser\Database;
+namespace Phaser;
 
 use Phaser\Abstracts\Connection;
 use Phutilities\Env;

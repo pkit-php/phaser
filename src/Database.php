@@ -1,6 +1,6 @@
 <?php
 
-namespace Phaser\Database;
+namespace Phaser;
 
 use \PDO;
 use Phaser\Abstracts\Connection;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Phaser\Database;
+namespace Phaser;
 
 use Phutilities\Sanitize;
 use PDO;
