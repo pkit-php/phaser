@@ -7,8 +7,8 @@ use Phaser\Abstracts\Connection;
 
 class Database
 {
-    protected ?PDO $pdo = null;
-    public Connection $connection;
+    public readonly ?PDO $pdo;
+    public readonly Connection $connection;
 
     public function __construct(?Connection $connection = null)
     {
