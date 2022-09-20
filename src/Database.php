@@ -10,9 +10,9 @@ class Database
     public readonly ?PDO $pdo;
     public readonly Connection $connection;
 
-    public function __construct(?Connection $connection = null)
+    public function __construct(Connection $connection = new EnvConnection)
     {
-        $this->connection = $connection ?? new EnvConnection;
+        $this->connection = $connection;
         $this->setConnection();
     }
 
