@@ -80,11 +80,13 @@ Classes de conexão e manipulaçao de Banco de Dados
     ```
 
   - update
+
     ```php
     /***/
     $query->update(['field1' => "value1", 'field2' => "value2", /***/]);
     /***/
     ```
+
   - delete
 
     ```php
@@ -104,6 +106,7 @@ Classes de conexão e manipulaçao de Banco de Dados
       | > | < | <> | = |
 
     - exemplo
+
       ```php
       /***/
       $query->/***/
@@ -125,6 +128,7 @@ Classes de conexão e manipulaçao de Banco de Dados
   - limit
 
     - exemplo
+
       ```php
       /***/
       $query->/***/
@@ -135,6 +139,7 @@ Classes de conexão e manipulaçao de Banco de Dados
   - query / params
 
     - exemplo
+
       ```php
       /***/
       echo $query; # é convertido em string automaticamente
@@ -204,12 +209,14 @@ Classes de conexão e manipulaçao de Banco de Dados
       | > | < | <> | = |
 
     - exemplo
+
       ```php
       [
         "status = 1", # valores sem chaves são escritos por extenso
         "id" => $id, # a condição padrão é '='
       ]
       ```
+
     - order
 
   - exemplo
@@ -224,6 +231,7 @@ Classes de conexão e manipulaçao de Banco de Dados
 
   - limit
     - exemplo
+
       ```php
       [
         10, # item inicial
