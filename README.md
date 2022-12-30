@@ -1,5 +1,7 @@
 # Database
 
+```Esse projeto está parado para fins de estudo```
+
 Classes de conexão e manipulaçao de Banco de Dados
 
 ## Database
