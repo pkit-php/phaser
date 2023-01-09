@@ -12,7 +12,7 @@ class Table
   private string $_table = "";
   private Database $_database;
 
-  public function __construct(array $properties = [], ?Connection $connection = null)
+  public function __construct(array $properties = [], Connection $connection = new EnvConnection)
   {
     foreach ($properties as $key => $value) {
       $this->{$key} = $value;
